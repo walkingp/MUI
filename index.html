@@ -44,7 +44,7 @@
                 <p>表单</p>
                 <ul>
                     <li><a href="#nav_input">输入框input</a></li>
-                    <li><a href="#nav_searchbox">搜索框</a></li>
+                    <li><a href="#nav_searchbox">搜索框searchbox</a></li>
                     <li><a href="#nav_select">下拉框select</a></li>
                     <li><a href="#nav_button">按钮button</a></li>
                     <li><a href="#nav_checkbox">复选框checkbox</a></li>
@@ -65,6 +65,8 @@
                     <li><a href="#nav_table">表格table</a></li>
                     <li><a href="#nav_spinner">加载器Spinner</a></li>
                     <li><a href="#nav_progressbar">进度条Progressbar</a></li>
+                    <li><a href="#nav_mask">遮罩层mask</a></li>
+                    <li><a href="#nav_arrow">箭头arrow</a></li>
                 </ul>
             </li>
             <li>
@@ -80,6 +82,7 @@
         </sidebar>
         <content id="content">
         <article>
+            <h3 id="nav_start">起步</h3>
             <h4 id="nav_about">关于Kodak.UI</h4>
             <p>简称KUI，Kodak PDC项目组前端UI通用CSS框架</p>
             <ul class="list">
@@ -158,6 +161,19 @@
             <pre>
                 <code class="css">
 #id{color: $gray20;}
+                </code>
+            </pre>
+            <h5>常用颜色</h5>
+            <div>
+                <p class="info">信息类</p>
+                <p class="warn">警告类</p>
+                <p class="error">错误内容</p>
+            </div>
+            <pre>
+                <code class="html">
+<p class="info">信息类</p>
+<p class="warn">警告类</p>
+<p class="error">错误内容</p>
                 </code>
             </pre>
             <h4 id="nav_helper">基础类</h4>
@@ -341,7 +357,12 @@ hr {
             <h4 id="nav_nest">嵌套</h4>                  
             <div class="columns demo">
                 <div class="column is-6">is-6</div>
-                <div class="column is-6">is-6</div>
+                <div class="column is-6">
+                    <div class="columns">
+                        <div class="column is-6">is-3</div>
+                        <div class="column is-6">is-3</div>
+                    </div>
+                </div>
             </div>
             <pre>
                 <code class="html">
@@ -377,6 +398,7 @@ hr {
                 </code>
             </pre>
             <h4 id="nav_select">下拉框</h4>
+            <h5>使用select标签</h5>
             <p>
                 <select>
                     <option>请选择值</option>
@@ -393,6 +415,27 @@ hr {
 </select>
                 </code>
             </pre>
+            <h5>使用&lt;div class="select"&gt;</h5>
+            <div class="select">
+                <input type="checkbox" id="select_menu">
+                <label for="select_menu">请选择值</label>
+                <div class="dropdown">
+                    <ul>
+                        <li>New File</li>
+                        <li>Edit File</li>
+                        <li class="seperator"></li>
+                        <li>
+                            Edit
+                            <ul>
+                                <li>Cut</li>
+                                <li>Copy</li>
+                                <li>Paste</li>
+                            </ul>
+                        </li>
+                        <li>About</li>
+                    </ul>
+                </div>
+            </div>
             <h4 id="nav_button">按钮</h4>
             <p>
                 <button>普通按钮</button>
@@ -520,7 +563,8 @@ hr {
                             <li>Paste</li>
                         </ul>
                     </li>
-                    <li>About</li>
+                    <li class="error">Delete</li>
+                    <li class="disabled">Disabled</li>
                 </ul>
             </div>
             <pre>
@@ -538,7 +582,7 @@ hr {
                 <li>Paste</li>
             </ul>
         </li>
-        <li>About</li>
+        <li class="error">Delete</li>
     </ul>
 </div>
                 </code>
@@ -1081,6 +1125,52 @@ hr {
         </div>
     </div>
 </div>
+                </code>
+            </pre>
+            <h4 id="nav_mask">遮罩层</h4>
+            <div>
+                <input type="checkbox" id="check_mask">
+                <label for="check_mask">打开遮罩层</label>
+                <div class="mask">
+                    <div><label for="check_mask">关闭</label></div>
+                </div>
+            </div>
+            <pre>
+                <code class="html">
+<div class="mask">
+    <div><label for="check_mask">关闭</label></div>
+</div>
+                </code>
+            </pre>
+            <h4 id="nav_arrow">箭头</h4>
+            <h5>普通箭头</h5>
+            <div>
+                <span class="arrow-up"></span>
+                <span class="arrow-down"></span>
+                <span class="arrow-left"></span>
+                <span class="arrow-right"></span>
+            </div>
+            <pre>
+                <code class="html">
+<span class="arrow-up"></span>
+<span class="arrow-down"></span>
+<span class="arrow-left"></span>
+<span class="arrow-right"></span>
+                </code>
+            </pre>
+            <h5>空心箭头</h5>
+            <div class="arrow">
+                <span class="hollow-arrow-up"></span>
+                <span class="hollow-arrow-down"></span>
+                <span class="hollow-arrow-left"></span>
+                <span class="hollow-arrow-right"></span>
+            </div>
+            <pre>
+                <code class="html">
+<span class="hollow-arrow-up"></span>
+<span class="hollow-arrow-down"></span>
+<span class="hollow-arrow-left"></span>
+<span class="hollow-arrow-right"></span>
                 </code>
             </pre>
             <h4 id="nav_versions">版本更新记录</h4>

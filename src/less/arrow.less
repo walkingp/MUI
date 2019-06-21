@@ -1,31 +1,34 @@
-.arrow-up {
+.arrow-up,.arrow-down,.arrow-left,.arrow-right {
     width: 0; 
     height: 0; 
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;    
     border-bottom: 5px solid @gray50;
-  }
-  
+    display: inline-block;
+  }  
   .arrow-down {
-    width: 0; 
-    height: 0; 
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;    
-    border-top: 5px solid @gray50;
-  }
-  
+    transform: rotate(180deg);
+  }  
   .arrow-right {
-    width: 0; 
-    height: 0; 
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;    
-    border-left: 5px solid @gray50;
-  }
-  
+    transform: rotate(90deg);
+  }  
   .arrow-left {
-    width: 0; 
-    height: 0; 
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;     
-    border-right: 5px solid @gray50; 
+    transform: rotate(270deg);
   }
+  .hollow-arrow-up,.hollow-arrow-down,.hollow-arrow-left,.hollow-arrow-right {
+    width: 8px;
+    height: 8px;
+    border: solid @gray50;
+    border-width: 1px 0 0 1px;
+    transform: rotate(45deg);
+    display: inline-block;
+  }
+  .hollow-arrow-down {
+    transform: rotate(225deg);
+  }  
+  .hollow-arrow-left {
+    transform: rotate(315deg);
+  }
+  .hollow-arrow-right {
+    transform: rotate(135deg);
+  }  

@@ -368,7 +368,14 @@ input[type=button].default,
 input[type=submit].default,
 input[type=number].default {
   background-color: rgba(0, 0, 0, 0.6);
-  color: #ffffff;
+}
+button.default:hover,
+.button.default:hover,
+input[type=button].default:hover,
+input[type=submit].default:hover,
+input[type=number].default:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: rgba(0, 0, 0, 0.75);
 }
 button:hover,
 .button:hover,
@@ -533,27 +540,103 @@ textarea.error,
 .input.error {
   box-shadow: 0 0 1px #ff6262;
 }
-select {
+select,
+.select {
   width: 260px;
   height: 24px;
   background-color: rgba(0, 0, 0, 0.05);
   box-shadow: 0 0 1px transparent;
   outline: none;
   border: none;
+  color: rgba(0, 0, 0, 0.75);
 }
-select.constraint {
+select:hover,
+.select:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+select.constraint,
+.select.constraint {
   box-shadow: 0 0 1px #ff6262;
 }
-select.open {
+select.open,
+.select.open {
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.2);
 }
-select.open.constraint {
+select.open.constraint,
+.select.open.constraint {
   background-color: #ffffff;
 }
-select[readonly] {
+select[readonly],
+.select[readonly] {
   background-color: rgba(0, 0, 0, 0.5);
   cursor: not-allowed;
+}
+select .dropdown,
+.select .dropdown {
+  display: none;
+}
+select .dropdown ul,
+.select .dropdown ul {
+  width: 100%;
+}
+select .dropdown ul ul,
+.select .dropdown ul ul {
+  margin-left: calc(100% + 10px);
+}
+select input[type=checkbox] + label,
+.select input[type=checkbox] + label {
+  display: block;
+  padding: 0 10px;
+  position: relative;
+  height: 24px;
+}
+select input[type=checkbox] + label:hover,
+.select input[type=checkbox] + label:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+select input[type=checkbox] + label::before,
+.select input[type=checkbox] + label::before {
+  display: none;
+}
+select input[type=checkbox] + label::after,
+.select input[type=checkbox] + label::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border: solid rgba(0, 0, 0, 0.5);
+  border-width: 0 1px 1px 0;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+select input[type=checkbox]:checked + label,
+.select input[type=checkbox]:checked + label {
+  position: relative;
+}
+select input[type=checkbox]:checked + label::after,
+.select input[type=checkbox]:checked + label::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border: solid rgba(0, 0, 0, 0.5);
+  border-width: 1px 0 0 1px;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 11px;
+  right: 10px;
+  left: auto;
+}
+select input[type=checkbox]:checked + label + .dropdown,
+.select input[type=checkbox]:checked + label + .dropdown {
+  display: block;
+  position: relative;
+}
+select {
+  padding: 0 5px;
 }
 input[type=radio],
 .radio {
@@ -731,33 +814,45 @@ input.switcher[type='checkbox']:checked + label::before {
 .counter.error {
   background-color: #ff3f3f;
 }
-.arrow-up {
+.arrow-up,
+.arrow-down,
+.arrow-left,
+.arrow-right {
   width: 0;
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-bottom: 5px solid rgba(0, 0, 0, 0.5);
+  display: inline-block;
 }
 .arrow-down {
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid rgba(0, 0, 0, 0.5);
+  transform: rotate(180deg);
 }
 .arrow-right {
-  width: 0;
-  height: 0;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-left: 5px solid rgba(0, 0, 0, 0.5);
+  transform: rotate(90deg);
 }
 .arrow-left {
-  width: 0;
-  height: 0;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-right: 5px solid rgba(0, 0, 0, 0.5);
+  transform: rotate(270deg);
+}
+.hollow-arrow-up,
+.hollow-arrow-down,
+.hollow-arrow-left,
+.hollow-arrow-right {
+  width: 8px;
+  height: 8px;
+  border: solid rgba(0, 0, 0, 0.5);
+  border-width: 1px 0 0 1px;
+  transform: rotate(45deg);
+  display: inline-block;
+}
+.hollow-arrow-down {
+  transform: rotate(225deg);
+}
+.hollow-arrow-left {
+  transform: rotate(315deg);
+}
+.hollow-arrow-right {
+  transform: rotate(135deg);
 }
 .dropdown ul {
   background-color: #ffffff;
@@ -787,6 +882,10 @@ input.switcher[type='checkbox']:checked + label::before {
 .dropdown ul li.seperator {
   height: 1px;
   background: rgba(0, 0, 0, 0.1);
+}
+.dropdown ul li.disabled {
+  cursor: not-allowed;
+  color: rgba(0, 0, 0, 0.2);
 }
 .dropdown ul li > ul {
   margin-left: 168px;
@@ -1270,6 +1369,16 @@ table tr:hover td {
   to {
     width: 100%;
   }
+}
+.mask {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 999;
 }
 .iconfont.small {
   font-size: 16px;

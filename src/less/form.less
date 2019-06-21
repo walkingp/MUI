@@ -24,13 +24,17 @@ input:not([type]), input[type="text"], textarea, .input{
         box-shadow: 0 0  1px @errorRed;
     }
 }
-select{
+select,.select{
     width: 260px;
     height: 24px;
     background-color: @gray05;
     box-shadow: 0 0 1px transparent;
     outline:none;
     border: none;
+    color: @gray75;
+    &:hover{
+        background-color: @gray10;
+    }
     &.constraint{
         box-shadow: 0 0 1px @errorRed;
     }
@@ -45,7 +49,64 @@ select{
         background-color: @gray50;
         cursor: not-allowed;
     }
+    .dropdown{
+        display: none;
+        ul{
+            width: 100%;
+            ul{
+                margin-left: calc(100% + 10px);
+            }
+        }
+    }
+    input[type=checkbox]+label{
+        display: block;
+        padding: 0 10px;
+        position: relative;
+        height: 24px;
+        &:hover{
+            background-color: @gray10;
+        }
+        &::before{
+            display: none;
+        }
+        &::after{
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            border: solid @gray50;
+            border-width: 0 1px 1px 0;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 5px;
+            right: 10px;
+        }
+    }
+    input[type=checkbox]:checked+label{
+        position: relative;
+        &::after{
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            border: solid @gray50;
+            border-width: 1px 0 0 1px;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 11px;
+            right: 10px;
+            left: auto;
+        }
+        &+.dropdown{
+            display: block;
+            position: relative;
+        }
+    }
 }
+select{
+    padding: 0 5px;
+}
+
 input[type=radio],.radio{
     display: none;
     &+label{

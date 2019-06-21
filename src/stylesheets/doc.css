@@ -133,7 +133,19 @@ sidebar input:checked+label+div{
     padding-bottom: 40px;
 }
 #content h4{
-    padding: 20px 0;
+    padding: 20px 0 10px 0;
+    margin-bottom: 10px;
+    border-bottom: dashed 1px rgba(0,0,0,.07);
+}
+#content h4::before{
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: solid rgba(0,0,0,.3);
+    border-width: 2px 0 0 2px;
+    transform: rotate(135deg);
+    margin-right: 10px;
 }
 content ul.list{
     list-style-type: disc;
@@ -182,9 +194,30 @@ table th,table td{
     text-align: center; 
 }
 .columns.demo .column{
-    background-color: #00d1b2;
+    background-color: #f1f1f1;
     padding: 1.25rem 0;
-    color: white;
     text-align: center;
-    box-shadow: 0 0 0 1px #eee;
+    box-shadow: 0 0 0 1px #ddd;
+}
+#check_mask+label+.mask{
+    visibility: hidden;
+}
+#check_mask:checked+label+.mask{
+    visibility: visible;
+}
+#check_mask+label+.mask div{
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    color: rgba(0,0,0,.9);
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+}
+#content .arrow span+span{
+    margin-left: 10px;
 }
