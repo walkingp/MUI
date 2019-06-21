@@ -1,0 +1,27 @@
+.searchbox{
+    width: 260px;
+    position: relative;
+    .icon-search{
+        position: absolute;
+        top: -2px;
+        left: 6px;
+        color: @gray75;
+    }
+    input{
+        padding: 0 25px;
+        &:not(:placeholder-shown) {
+            visibility: visible;
+        }
+        &:valid+.icon-cancel_nc {
+            visibility: visible;
+        }
+    }
+    .icon-cancel_nc{
+        position: absolute;
+        top: -3px;
+        right: 5px;
+        cursor: pointer;
+        visibility: hidden;
+        color: @gray50;
+    }
+}

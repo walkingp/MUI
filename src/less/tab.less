@@ -1,0 +1,55 @@
+.tabs {
+    position: relative;
+    display:flex;
+    margin: 25px 0;
+    justify-content:center;
+    flex-direction: row;
+    border-bottom: 1px solid #ccc;
+    .tab {
+        margin:0 5px;
+        display: block;
+        label {
+            background: @white;
+            border: 1px solid #ccc;
+            margin-left: -1px;
+            left: 1px;            
+            height: 24px;
+            line-height: 24px;
+            display: inline-block;
+            padding: 0 10px;
+            min-width: 56px;
+            position: relative;
+            top: 3px;
+            &::before{
+                display: none;
+            }
+            &:hover{
+                background-color: #eee;;
+            }
+        }
+        .content {
+            position: absolute;
+            top: 26px;
+            left: 0;
+            background: white;
+            right: 0;
+            bottom: 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            opacity:0;
+            min-height: 200px;
+        }
+        input[type="radio"] {
+            display: none;
+            &:checked~label {
+                background: white;
+                border-bottom: 1px solid white;
+                z-index: 2;
+                &~.content {
+                    z-index: 1;
+                    opacity:1;
+                }
+            }
+        }
+    }
+  }

@@ -1,0 +1,63 @@
+hr {
+    border: none;
+    border-bottom: 1px solid @gray20;
+}
+.clear{
+    clear: both;
+}
+.text-center{
+    text-align: center;
+}
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
+.fixed{
+    position: fixed;
+}
+.flex{
+    display: flex;
+}
+.block{
+    display: block;
+}
+.inline{
+    display: inline;
+}
+.inline-block{
+    display: inline-block;
+}
+.none{
+    display: none;
+}
+.hidden{
+    visibility: hidden;
+}
+.visible{
+    visibility: visible;
+}
+.circle {
+    border-radius: 50%;
+}
+@keyframes spin { 
+    from { 
+        transform: rotate(0deg); 
+    } to { 
+        transform: rotate(360deg); 
+    }
+}
+.spin{
+    animation: spin @duration linear infinite;
+}
+.iconfont.spin::before{
+    animation: spin @duration1s linear infinite;
+    display: inline-block;
+}

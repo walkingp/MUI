@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kodak UI</title>
+    <link id="favicon" rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./src/less/styles.css" />
+    <link rel="stylesheet" type="text/css" href="./src/stylesheets/doc.css" />
+    <link rel="stylesheet" type="text/css" href="./src/libs/highlight/monokai_sublime.min.css" />    
+</head>
+<body>
+    <header></header>
+    <main>
+        <sidebar id="sidebar">    
+        <!-- <input id="chk" checked="checked" type="checkbox" />
+        <label for="chk" class="menubar"><span></span></label> -->
+        <div class="sidebar">
+            <div id="logo">
+                <h1><img src="./logo.png" alt="Kodak.UI"></h1>
+                <p><strong>KUI</strong> Kodak UI Library</p>
+            </div>
+            <ul>
+            <li>
+                <p>起步</p>
+                <ul>
+                    <li><a href="#nav_about">关于</a></li>
+                    <li><a class="active" href="#nav_start">开始使用</a></li>
+                    <li><a href="#nav_custom">自定义</a></li>
+                    <li><a href="#nav_color">颜色</a></li>
+                    <li><a href="#nav_helper">基础类</a></li>
+                    <li><a href="#nav_iconfont">Icons</a></li>
+                </ul>
+            </li>
+            <li>
+                <p>布局</p>
+                <ul>
+                    <li><a href="#nav_basic">基本</a></li>
+                    <li><a href="#nav_nest">嵌套</a></li>
+                </ul>
+            </li>
+            <li>
+                <p>表单</p>
+                <ul>
+                    <li><a href="#nav_input">输入框input</a></li>
+                    <li><a href="#nav_searchbox">搜索框</a></li>
+                    <li><a href="#nav_select">下拉框select</a></li>
+                    <li><a href="#nav_button">按钮button</a></li>
+                    <li><a href="#nav_checkbox">复选框checkbox</a></li>
+                    <li><a href="#nav_radio">单选框radio</a></li>
+                </ul>
+            </li>
+            <li>
+                <p>组件</p>
+                <ul>
+                    <li><a href="#nav_tooltip">提示框tooltip</a></li>
+                    <li><a href="#nav_dropdown">下拉框dropdown</a></li>
+                    <li><a href="#nav_dialog">对话框dialog</a></li>
+                    <li><a href="#nav_alert">提示框alert</a></li>
+                    <li><a href="#nav_toast">消息提示框toast</a></li>
+                    <li><a href="#nav_tab">选项卡tab</a></li>
+                    <li><a href="#nav_sidetab">垂直选项卡tab</a></li>
+                    <li><a href="#nav_alert">弹出框alert</a></li>
+                    <li><a href="#nav_table">表格table</a></li>
+                    <li><a href="#nav_spinner">加载器Spinner</a></li>
+                    <li><a href="#nav_progressbar">进度条Progressbar</a></li>
+                </ul>
+            </li>
+            <li>
+                <p>关于</p>
+                <ul>
+                    <li>
+                        <a href="#nav_versions">版本更新记录</a>
+                    </li>
+                </ul>
+            </li>
+            </ul>
+        </div>
+        </sidebar>
+        <content id="content">
+        <article>
+            <h4 id="nav_about">关于Kodak.UI</h4>
+            <p>简称KUI，Kodak PDC项目组前端UI通用CSS框架</p>
+            <ul class="list">
+                <li>简洁迷你，大小仅22KB；</li>
+                <li>语义化，使用HTML5及CSS3技术，符合Web标准；</li>
+                <li>完全基于HTML+CSS，无任何JavaScript代码</li>
+                <li>使用Less预处理器，可定义主题颜色；</li>
+                <li>内置丰富组件，可满足大部分开发需求；</li>
+                <li>使用Iconfont，符合兼容性及减少http请求；</li>
+            </ul>
+            <h4 id="nav_start">开始使用</h4>
+            <p>第一步：下载kodak.ui.css文件</p>
+            <ul class="list">
+                <li>
+                    <a class="link" href="src/css/kodak.ui.css">下载开发版kodak.ui.css</a> (22KB)
+                </li>
+                <li>
+                    或<a class="link" href="src/css/kodak.ui.min.css">下载压缩版kodak.ui.min.css</a> (18KB)
+                </li>
+            </ul>
+            <p>第二步：将kodak.ui.css文件复制到你的文件夹，然后在页面中head标签内添加。</p>
+            <pre class="hljs">&lt;link rel="stylesheet" href="css/kodak.ui.css" /&gt;</pre>
+            <h4 id="nav_custom">自定义</h4>
+            <h5>下载并修改源码</h5>
+            <p>
+                <a class="link" href="src/kui.less.zip">下载kui.less.zip</a>
+            </p>
+            <p>文件结构：</p>
+            <pre class="list">
+                <code>
+├─styles.less       总入口
+│
+├─minireset.less    重置类
+├─normalized.less   初始化默认值
+├─color.less        颜色
+├─dimension.less    尺寸
+├─typography.less   排版
+├─form.less         表单（含单选框、复选框、下拉框）
+├─switcher.less     iOS风格开关
+├─counter.less      计数器
+├─alert.less        弹出框
+├─arrow.less        箭头
+├─button.less       按钮
+├─dialog.less       弹出窗口
+├─dropdown.less     下拉菜单
+├─helper.less       公共类
+├─iconfont.less     图标
+├─layout.less       栅格式布局
+├─progressbar.less  进度条
+├─searchbox.less    搜索框
+├─sidetab.less      竖直选项卡
+├─spinner.less      加载器
+├─tab.less          选项卡
+├─table.less        表格类
+├─toast.less        Toast消息
+├─tooltip.less      鼠标悬停   
+                </code>
+            </pre>
+            <p>使用less自定义变量，将所有变量更改为自定义值。下载源码所有.less文件</p>
+            <h4 id="nav_color">颜色</h4>
+            <p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>颜色</th>
+                            <th>变量</th>
+                            <th>默认值</th>
+                        </tr>
+                    </thead>
+                    <tbody id="color-table">
+                    </tbody>
+                </table>
+            </p>
+            <h5>使用方式</h5>
+            <p>变量形式请使用less方式引用</p>
+            <pre>
+                <code class="css">
+#id{color: $gray20;}
+                </code>
+            </pre>
+            <h4 id="nav_helper">基础类</h4>
+            <pre>
+                <code class="css">
+hr {
+    border: none;
+    border-bottom: 1px solid @gray20;
+}
+.clear{
+    clear: both;
+}
+.text-center{
+    text-align: center;
+}
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
+.fixed{
+    position: fixed;
+}
+.flex{
+    display: flex;
+}
+.block{
+    display: block;
+}
+.inline{
+    display: inline;
+}
+.inline-block{
+    display: inline-block;
+}
+.none{
+    display: none;
+}
+.hidden{
+    visibility: hidden;
+}
+.visible{
+    visibility: visible;
+}                    
+                </code>
+            </pre>
+            <h4 id="nav_iconfont">图标Iconfont</h4>
+            <h5>小图标</h5>
+            <p>
+                <span class="iconfont icon-unknown_c"></span>
+                <span class="iconfont icon-ok_c"></span>
+                <span class="iconfont icon-ok_nc"></span>
+            </p>
+            <pre>
+                <code class="html">
+<span class="iconfont icon-unknown_c"></span>
+<span class="iconfont icon-ok_c"></span>
+<span class="iconfont icon-ok_nc"></span>
+                </code>
+            </pre>
+            <h5>中图标</h5>
+            <p>
+                <span class="iconfont medium icon-unknown_c"></span>
+                <span class="iconfont medium icon-ok_c"></span>
+                <span class="iconfont medium icon-ok_nc"></span>
+            </p>
+            <pre>
+                <code class="html">
+<span class="iconfont medium icon-unknown_c"></span>
+<span class="iconfont medium icon-ok_c"></span>
+<span class="iconfont medium icon-ok_nc"></span>
+                </code>
+            </pre>
+            <h5>大图标</h5>
+            <p>
+                <span class="iconfont large icon-unknown_c"></span>
+                <span class="iconfont large icon-ok_c"></span>
+                <span class="iconfont large icon-ok_nc"></span>
+            </p>
+            <pre>
+                <code class="html">
+<span class="iconfont large icon-unknown_c"></span>
+<span class="iconfont large icon-ok_c"></span>
+<span class="iconfont large icon-ok_nc"></span>
+                </code>
+            </pre>
+            <h5>带颜色图标</h5>
+            <p>
+                <span class="iconfont icon-unknown_c warn"></span>
+                <span class="iconfont icon-ok_c info"></span>
+                <span class="iconfont icon-ok_nc succ"></span>
+            </p>
+            <pre>
+                <code class="html">
+<span class="iconfont icon-unknown_c warn"></span>
+<span class="iconfont icon-ok_c info"></span>
+<span class="iconfont icon-ok_nc succ"></span>
+                </code>
+            </pre>
+            <h5>带动画图标</h5>
+            <p>
+                <span class="iconfont icon-color_target large spin"></span>
+                <span class="iconfont icon-clock large spin"></span>
+                <span class="iconfont icon-history large spin"></span>
+            </p>
+            <pre>
+                <code class="html">
+<span class="iconfont icon-color_target large spin"></span>
+<span class="iconfont icon-clock large spin"></span>
+<span class="iconfont icon-history large spin"></span>
+                </code>
+            </pre>
+            <p>完整版图标请<a class="link" href="iconfont/demo_index.html" title="">点击查看</a></p>
+            <h4 id="nav_basic">基本</h4>
+            <p>添加布局方式</p>
+            <ul>
+                <li>添加.columns选择器</li>
+                <li>添加多个.column子选择器</li>
+            </ul>
+            <div class="columns demo">
+                <div class="column">column 1</div>
+                <div class="column">column 2</div>
+                <div class="column">column 3</div>
+                <div class="column">column 4</div>
+            </div>
+            <pre>
+                <code class="html">
+<div class="columns">
+    <div class="column">column 1</div>
+    <div class="column">column 2</div>
+    <div class="column">column 3</div>
+    <div class="column">column 4</div>
+</div>
+                </code>
+            </pre>
+            <h4 id="nav_dismens">尺寸</h4>
+            <p>当前宽度等分为12份，分别使用.is-1,.is-2,.is-3,...,.is-12来代表</p>        
+            <div class="columns demo">
+                <div class="column is-6">is-6</div>
+                <div class="column is-6">is-6</div>
+            </div>
+            <pre>
+                <code class="html">
+<div class="columns">
+    <div class="column is-6">is-6</div>
+    <div class="column is-6">is-6</div>
+</div>
+                </code>
+            </pre>
+            <div class="columns demo">
+                <div class="column is-2">is-2</div>
+                <div class="column is-10">is-10</div>
+            </div>
+            <pre>
+                <code class="html">
+<div class="columns">
+    <div class="column is-2">is-2</div>
+    <div class="column is-10">is-10</div>
+</div>
+                </code>
+            </pre>
+            <div class="columns demo">
+                <div class="column is-11">is-11</div>
+                <div class="column is-1">is-1</div>
+            </div>
+            <pre>
+                <code class="html">
+<div class="columns">
+    <div class="column is-11">is-11</div>
+    <div class="column is-1">is-1</div>
+</div>
+                </code>
+            </pre>
+            <h4 id="nav_nest">嵌套</h4>                  
+            <div class="columns demo">
+                <div class="column is-6">is-6</div>
+                <div class="column is-6">is-6</div>
+            </div>
+            <pre>
+                <code class="html">
+<div class="columns">
+    <div class="column is-6">is-6</div>
+    <div class="column is-6">is-6</div>
+</div>
+                </code>
+            </pre>
+            <h4 id="nav_input">输入框</h4>
+            <p>使用input标签或者.input选择符</p>
+            <p>
+                <input type="text" value="" placeholder="请输入文本" />
+            </p>
+            <pre>
+                <code class="html">
+                    <input type="text" value="" placeholder="请输入文本" />                  
+                </code>
+            </pre>
+            <h4 id="nav_searchbox">搜索框 </h4>
+            <div class="searchbox">
+                <span class="iconfont icon-search"></span>
+                <input type="text" placeholder="请输入搜索内容" required pattern="\S+.*">
+                <span class="iconfont icon-cancel_nc"></span>
+            </div>
+            <pre>
+                <code class="html">
+<div class="searchbox">
+    <span class="iconfont icon-search"></span>
+    <input type="text" placeholder="请输入搜索内容" required pattern="\S+.*">
+    <span class="iconfont icon-cancel_nc"></span>
+</div>
+                </code>
+            </pre>
+            <h4 id="nav_select">下拉框</h4>
+            <p>
+                <select>
+                    <option>请选择值</option>
+                    <option>男</option>
+                    <option>女</option>
+                </select>
+            </p>
+            <pre>
+                <code class="html">
+<select>
+    <option>请选择值</option>
+    <option>男</option>
+    <option>女</option>
+</select>
+                </code>
+            </pre>
+            <h4 id="nav_button">按钮</h4>
+            <p>
+                <button>普通按钮</button>
+                <button class="active">按下状态</button>
+                <button class="destructive">删除操作</button>
+                <button disabled="disabled">不可用</button>
+                <button class="default">默认按钮</button>
+            </p>
+            <pre>
+                <code class="html">
+<button>普通按钮</button>
+<button class="active">按下状态</button>
+<button class="destructive">删除操作</button>
+<button disabled="disabled">不可用</button>
+<button class="default">默认按钮</button>
+                </code>
+            </pre>
+            <h4 id="nav_checkbox">复选框</h4>
+            <p>
+                <input type="checkbox" id="checkbox" value="1">
+                <label for="checkbox">复选框</label>
+            </p>
+            <p>
+                <input type="checkbox" checked="checked" id="checked" value="1">
+                <label for="checked">选中复选框</label>
+            </p>
+            <p>
+                <input type="checkbox" class="semi" id="semichecked" value="1">
+                <label for="semichecked">半复选框</label>
+            </p>
+            <p>
+                <input type="checkbox" disabled="disabled" id="checkbox-disabled" value="1">
+                <label for="checkbox-disabled">不可用复选框</label>
+            </p>
+            <pre>
+                <code class="html">
+<input type="checkbox" id="checkbox" value="1">
+<label for="checkbox">复选框</label>
+<input type="checkbox" checked="checked" id="checked" value="1">
+<label for="checked">选中复选框</label>
+<input type="checkbox" class="semi" id="semichecked" value="1">
+<label for="semichecked">半复选框</label>
+<input type="checkbox" disabled="disabled" id="checkbox-disabled" value="1">
+<label for="checkbox-disabled">不可用复选框</label>
+                </code>
+            </pre>
+            <h4 id="nav_radio">单选框</h4>
+            <p>
+                <input type="radio" id="radio"><label for="radio">普通状态</label>
+            </p>
+            <p>
+                <input type="radio" checked="checked" id="radio-checked"><label for="radio-checked">普通状态</label>
+            </p>
+            <p>
+                <input type="radio" disabled="disabled" id="radio-disabled"><label for="radio-disabled">禁用状态</label>
+            </p>
+            <pre>
+                <code class="html">
+<input type="radio" id="radio"><label for="radio">普通状态</label>
+<input type="radio" checked="checked" id="radio-checked"><label for="radio-checked">普通状态</label>
+<input type="radio" disabled="disabled" id="radio-disabled"><label for="radio-disabled">禁用状态</label>
+                </code>
+            </pre>
+            <h4 id="nav_switcher">Switcher</h4>
+            <p>
+                <input type="checkbox" id="toggle" class="switcher" />
+                <label for="toggle"></label>
+            </p>
+            <p>
+                <input type="checkbox" checked="checked" id="toggle_checked" class="switcher" />
+                <label for="toggle_checked"></label>
+            </p>
+            <pre>
+                <code class="html">
+<input type="checkbox" id="toggle" class="switcher" />
+<label for="toggle"></label>
+<input type="checkbox" checked="checked" id="toggle_checked" class="switcher" />
+<label for="toggle_checked"></label>
+                </code>
+            </pre>
+            <h4 id="nav_counter">Counter计数器</h4>
+            <p>
+                <label class="counter">9</label>
+                <span>Counter</span>
+            </p>
+            <p>
+                <label class="counter error">9</label>
+                <span>Counter</span>
+            </p>
+            <pre>
+                <code class="html">
+<label class="counter">9</label>
+<span>Counter</span>
+<label class="counter error">9</label>
+<span>Counter</span>
+                </code>
+            </pre>
+                <h4 id="nav_tooltip">Tooltip</h4>
+            <p>
+                <div class="tooltip">普通tooltip</div>
+                <div class="tooltip arrowed info">普通信息类：<br />详细内容</div>
+                <div class="tooltip arrowed warn">警告信息类：<br />详细内容</div>
+                <div class="tooltip arrowed error">错误信息类：<br />详细内容</div>
+            </p>
+            <pre>
+                <code class="html">
+<div class="tooltip">普通tooltip</div>
+<div class="tooltip arrowed info">普通信息类：<br />详细内容</div>
+<div class="tooltip arrowed warn">警告信息类：<br />详细内容</div>
+<div class="tooltip arrowed error">错误信息类：<br />详细内容</div>
+                </code>
+            </pre>
+            <h4 id="nav_dropdown">下拉菜单</h4>
+            <h5>不带图标菜单</h5>
+            <div class="dropdown">
+                <ul>
+                    <li>New File</li>
+                    <li>Edit File</li>
+                    <li class="seperator"></li>
+                    <li>
+                        Edit
+                        <ul>
+                            <li>Cut</li>
+                            <li>Copy</li>
+                            <li>Paste</li>
+                        </ul>
+                    </li>
+                    <li>About</li>
+                </ul>
+            </div>
+            <pre>
+                <code class="html">
+<div class="dropdown">
+    <ul>
+        <li>New File</li>
+        <li>Edit File</li>
+        <li class="seperator"></li>
+        <li>
+            Edit
+            <ul>
+                <li>Cut</li>
+                <li>Copy</li>
+                <li>Paste</li>
+            </ul>
+        </li>
+        <li>About</li>
+    </ul>
+</div>
+                </code>
+            </pre>
+            <h5>带图标菜单</h5>
+            <div class="dropdown">
+                <ul>
+                    <li>
+                        <span class="iconfont icon-element"></span>
+                        New File
+                    </li>
+                    <li>
+                        <span class="iconfont icon-edit"></span>
+                        Edit File
+                    </li>
+                    <li class="seperator"></li>
+                    <li>
+                        Edit
+                        <ul>
+                            <li>Cut</li>
+                            <li>Copy</li>
+                            <li>Paste</li>
+                        </ul>
+                    </li>
+                    <li>About</li>
+                </ul>
+            </div>
+            <pre>
+                <code class="html">
+<div class="dropdown">
+    <ul>
+        <li>
+            <span class="iconfont icon-element"></span>
+            New File
+        </li>
+        <li>
+            <span class="iconfont icon-edit"></span>
+            Edit File
+        </li>
+        <li class="seperator"></li>
+        <li>
+            Edit
+            <ul>
+                <li>Cut</li>
+                <li>Copy</li>
+                <li>Paste</li>
+            </ul>
+        </li>
+        <li>About</li>
+    </ul>
+</div>
+                </code>
+            </pre>
+            <h4 id="nav_dialog">对话框</h4>
+            <h5>普通对话框</h5>
+            <div class="dialog">
+                <header>
+                    dialog title
+                    <span class="iconfont icon-cancel"></span>
+                </header>
+                <main>content</main>
+                <footer>
+                    <button>Cancel</button>
+                    <button>OK</button>
+                </footer>
+            </div>
+            <pre>
+                <code class="html">
+<div class="dialog">
+    <header>
+        dialog title
+        <span class="iconfont icon-cancel"></span>
+    </header>
+    <main>content</main>
+    <footer>
+        <button>Cancel</button>
+        <button>OK</button>
+    </footer>
+</div>
+                </code>
+            </pre>
+            <h5 id="nav_form">Form对话框</h5>
+            <div class="dialog">
+                <header>
+                    dialog title
+                    <span class="iconfont icon-cancel"></span>
+                </header>
+                <main>
+                    <div class="control"><label for="">Name</label><input type="text" placeholder="Value"></div>
+                    <div class="control seperator"></div>
+                    <div class="control">
+                        <label for="Gender">性别</label>
+                        <select>
+                            <option>男</option>
+                        </select>
+                    </div>
+                    <div class="control">
+                        <label for="">注意事项</label>
+                        <input type="text">
+                        <span class="warn">*</span>
+                    </div>
+                </main>
+                <footer>
+                    <button>Cancel</button>
+                    <button>OK</button>
+                </footer>
+            </div>
+            <pre>
+                <code class="html">
+<div class="dialog">
+    <header>
+        dialog title
+        <span class="iconfont icon-cancel"></span>
+    </header>
+    <main>
+        <div class="control"><label for="">Name</label><input type="text" placeholder="Value"></div>
+        <div class="control seperator"></div>
+        <div class="control">
+            <label for="Gender">性别</label>
+            <select>
+                <option>男</option>
+            </select>
+        </div>
+        <div class="control">
+            <label for="">注意事项</label>
+            <input type="text">
+            <span class="warn">*</span>
+        </div>
+    </main>
+    <footer>
+        <button>Cancel</button>
+        <button>OK</button>
+    </footer>
+</div>
+                </code>
+            </pre>
+            <h4 id="nav_alert">提示框Alert</h4>
+            <h5>信息提示框</h5>
+            <div class="alert">
+                <header class="info">info alert title</header>
+                <main>
+                  <div class="title">Short message in here</div>
+                  <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum assumenda debitis doloremque animi perferendis iure, quis reiciendis maiores vero fuga dolor ipsam</p>
+                </main>
+                <footer>
+                    <button>OK</button>
+                </footer>
+            </div>
+            <pre>
+                <code class="html">
+<div class="alert">
+    <header class="info">info alert title</header>
+    <main>
+        <div class="title">Short message in here</div>
+        <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum assumenda debitis doloremque animi perferendis iure, quis reiciendis maiores vero fuga dolor ipsam</p>
+    </main>
+    <footer>
+        <button>OK</button>
+    </footer>
+</div>
+                </code>
+            </pre>
+            <h5>警告提示框</h5>
+            <div class="alert">
+                <header class="warn">warning alert title</header>
+                <main>
+                  <div class="title">Short message in here</div>
+                  <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum assumenda debitis doloremque animi perferendis iure, quis reiciendis maiores vero fuga dolor ipsam</p>
+                </main>
+                <footer>
+                    <button>OK</button>
+                </footer>
+            </div>
+            <pre>
+                <code class="html">
+<div class="alert">
+    <header class="warn">warning alert title</header>
+    <main>
+        <div class="title">Short message in here</div>
+        <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum assumenda debitis doloremque animi perferendis iure, quis reiciendis maiores vero fuga dolor ipsam</p>
+    </main>
+    <footer>
+        <button>OK</button>
+    </footer>
+</div>
+                </code>
+            </pre>
+            <h5>错误提示框</h5>
+            <div class="alert">
+                <header class="error">Error alert title</header>
+                <main>
+                  <div class="title">Short message in here</div>
+                  <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum assumenda debitis doloremque animi perferendis iure, quis reiciendis maiores vero fuga dolor ipsam</p>
+                </main>
+                <footer>
+                    <button>OK</button>
+                </footer>
+            </div>
+            <pre>
+                <code class="html">
+<div class="alert">
+    <header class="error">Error alert title</header>
+    <main>
+        <div class="title">Short message in here</div>
+        <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum assumenda debitis doloremque animi perferendis iure, quis reiciendis maiores vero fuga dolor ipsam</p>
+    </main>
+    <footer>
+        <button>OK</button>
+    </footer>
+</div>
+                </code>
+            </pre>
+            <h4 id="nav_toast">Toast提示框</h4>
+            <h5>成功提示</h5>
+            <div class="toast succ">
+                Successful Action Completed Alert
+                <span class="iconfont icon-cancel"></span>
+            </div>
+            <pre>
+                <code class="html">
+<div class="toast succ">
+    Successful Action Completed Alert
+    <span class="iconfont icon-cancel"></span>
+</div>
+                </code>
+            </pre>
+            <h5>错误提示</h5>
+            <div class="toast error">
+                Failure or Warning Alert
+                <span class="iconfont icon-cancel"></span>
+            </div>
+            <pre>
+                <code class="html">
+<div class="toast error">
+    Failure or Warning Alert
+    <span class="iconfont icon-cancel"></span>
+</div>
+                </code>
+            </pre>
+            <h5>警告提示</h5>
+            <div class="toast warn">
+                Attention Alert
+                <span class="iconfont icon-cancel"></span>
+            </div>
+            <pre>
+                <code class="html">
+<div class="toast warn">
+    Attention Alert
+    <span class="iconfont icon-cancel"></span>
+</div>
+                </code>
+            </pre>
+            <h5>信息提示</h5>
+            <div class="toast info">
+                General Infomation Alert
+                <span class="iconfont icon-cancel"></span>
+            </div>
+            <pre>
+                <code class="html">
+<div class="toast info">
+    General Infomation Alert
+    <span class="iconfont icon-cancel"></span>
+</div>
+                </code>
+            </pre>
+            <h4 id="nav_tab">Tab选项卡</h4>
+            <h5>简单tab（仅tab选项卡）</h5>
+            <div class="tabs">
+                <div class="tab">
+                    <input type="radio" name="radio_tab" id="t1" checked="checked"><label for="t1">Customers</label>
+                </div>
+                <div class="tab">
+                    <input type="radio" name="radio_tab" id="t2"><label for="t2">Users</label>
+                </div>
+                <div class="tab">
+                    <input type="radio" name="radio_tab" id="t3"><label for="t3">Roles</label>
+                </div>
+                <div class="tab">
+                    <input type="radio" name="radio_tab" id="t4"><label for="t4">Themes</label>
+                </div>
+            </div>
+            <pre>
+                <code class="html">
+<ul class="tab">
+    <li class="active">
+        <input type="radio" name="radio_tab" id="t1" checked="checked">
+        <label for="t1">Customers</label>
+    </li>
+    <li>
+        <input type="radio" name="radio_tab" id="t2">
+        <label for="t2">Users</label>
+    </li>
+    <li>
+        <input type="radio" name="radio_tab" id="t3">
+        <label for="t3">Roles</label>
+    </li>
+    <li>
+        <input type="radio" name="radio_tab" id="t4">
+        <label for="t4">Themes</label>
+    </li>
+</ul>
+                </code>
+            </pre>
+            <h5>含联动container</h5>
+            <div class="tabs" style="min-height: 200px;">
+                <div class="tab">
+                    <input type="radio" id="tab-1" name="tab-group-1" checked="checked">
+                    <label for="tab-1">Tab One</label>                
+                    <div class="content">
+                    Content 1
+                    </div>
+                </div>
+                
+                <div class="tab">
+                    <input type="radio" id="tab-2" name="tab-group-1" value="2">
+                    <label for="tab-2">Tab Two</label>
+                
+                    <div class="content">
+                        Content 2
+                    </div>
+                </div>
+                
+                <div class="tab">
+                    <input type="radio" id="tab-3" name="tab-group-1" value="3">
+                    <label for="tab-3">Tab Three</label>
+                
+                    <div class="content">
+                        Content 3 
+                    </div>
+                </div>                
+            </div>       
+            <pre>
+                <code class="html">
+<div class="tabs">
+    <div class="tab">
+        <input type="radio" id="tab-1" name="tab-group-1" checked="checked">
+        <label for="tab-1">Tab One</label>
+    
+        <div class="content">
+        Content 1
+        </div>
+    </div>    
+    <div class="tab">
+        <input type="radio" id="tab-2" name="tab-group-1">
+        <label for="tab-2">Tab Two</label>
+    
+        <div class="content">
+            Content 2
+        </div>
+    </div>    
+    <div class="tab">
+        <input type="radio" id="tab-3" name="tab-group-1">
+        <label for="tab-3">Tab Three</label>
+    
+        <div class="content">
+            Content 3 
+        </div>
+    </div>    
+</div>      
+                </code>
+            </pre>     
+            <h4 id="nav_sidetab">SideTab选项卡</h4>
+            <div class="dialog sidetab">
+                <header>
+                    Dialog title 
+                    <span class="iconfont icon-cancel"></span>
+                </header>
+                <main>
+                    <sidebar>
+                        <ul>
+                            <li class="active">General</li>
+                            <li>User Info</li>
+                            <li>Settings</li>
+                        </ul>
+                    </sidebar>
+                    <content>
+                        content
+                    </content>
+                </main>
+                <footer>
+                    <button>Cancel</button>
+                    <button>OK</button>
+                </footer>
+            </div>
+            <pre>
+                <code class="html">
+<div class="dialog tab">
+    <header>
+        Dialog title 
+        <span class="iconfont icon-cancel"></span>
+    </header>
+    <main>
+        <sidebar>
+            <ul>
+                <li class="active">General</li>
+                <li>User Info</li>
+                <li>Settings</li>
+            </ul>
+        </sidebar>
+        <content>
+            content
+        </content>
+    </main>
+    <footer>
+        <button>Cancel</button>
+        <button>OK</button>
+    </footer>
+</div>
+                </code>
+            </pre>
+            <h4 id="nav_table">表格</h4>
+            <table>
+                <tr>
+                    <th class="sorted">姓名</th>
+                    <th>年龄</th>
+                    <th>性别</th>
+                    <th>资料</th>
+                </tr>
+                <tr>
+                    <td>Michael</td>
+                    <td>22</td>
+                    <td>
+                        <span class="iconfont icon-ok_nc succ"></span>
+                        男
+                    </td>
+                    <td>软件工程师</td>
+                </tr>
+                <tr>
+                    <td>Michael</td>
+                    <td>22</td>
+                    <td>
+                        <span class="iconfont icon-ok_nc succ"></span>
+                        男
+                    </td>
+                    <td>软件工程师</td>
+                </tr>
+                <tr>
+                    <td>Michael</td>
+                    <td>22</td>
+                    <td>
+                        <span class="iconfont icon-ok_nc succ"></span>
+                        男
+                    </td>
+                    <td>软件工程师</td>
+                </tr>
+                <tr>
+                    <td>Michael</td>
+                    <td>22</td>
+                    <td>
+                        <span class="iconfont icon-ok_nc succ"></span>
+                        男
+                    </td>
+                    <td>软件工程师</td>
+                </tr>
+                <tr>
+                    <td>Michael</td>
+                    <td>22</td>
+                    <td>
+                        <span class="iconfont icon-ok_nc succ"></span>
+                        男
+                    </td>
+                    <td>软件工程师</td>
+                </tr>
+                <tr>
+                    <td>Michael</td>
+                    <td>22</td>
+                    <td>
+                        <span class="iconfont icon-ok_nc succ"></span>
+                        男
+                    <td>软件工程师</td>
+                </tr>
+            </table>
+            <pre>
+                <code class="html">
+<table>
+    <tr>
+        <th class="sorted">姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>资料</th>
+    </tr>
+    <tr>
+        <td>Michael</td>
+        <td>22</td>
+        <td>
+            <span class="iconfont icon-ok_nc succ"></span>
+            男
+        </td>
+        <td>软件工程师</td>
+    </tr>
+</table>
+                </code>
+            </pre>
+            <h4 id="nav_spinner">Spinner加载器</h4>
+            <div class="spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <pre>
+                <code class="html">
+<div class="spinner">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+                </code>
+            </pre>
+            <h4 id="nav_progressbar">进度条Progressbar</h4>
+            <div class="progressbar">
+                <div class="header">creating job</div>
+                <div class="body">
+                    <div class="bar">
+                        <div class="value animate"></div>
+                    </div>
+                </div>
+            </div>
+            <pre>
+                <code class="html">
+<div class="progressbar">
+    <div class="header">creating job</div>
+    <div class="body">
+        <div class="bar">
+            <div class="value animate"></div>   //  此处为animate为演示动画效果
+        </div>
+    </div>
+</div>
+                </code>
+            </pre>
+            <h4 id="nav_versions">版本更新记录</h4>
+            <ul class="list">
+                <li><time>2019-6-20</time> V1.0.0发布</li>
+            </ul>
+        </article>
+        </content>
+    </main>
+    <script src="./src/libs/highlight/highlight.pack.js"></script>
+    <script type="text/javascript">
+        function initColorsTable(){
+            var colors={
+            'black': 'rgba(0,0,0,1)',
+            'gray75': 'rgba(0,0,0,.75)',
+            'gray70': 'rgba(0,0,0,.7)',
+            'gray60': 'rgba(0,0,0,.6)',
+            'gray50': 'rgba(0,0,0,.5)',
+            'gray30': 'rgba(0,0,0,.3)',
+            'gray20': 'rgba(0,0,0,.2)',
+            'gray10': 'rgba(0,0,0,.1)',
+            'gray05': 'rgba(0,0,0,.05)',
+            'dialogBack': 'rgba(245,245,245,1)',
+            'white': 'rgba(255,255,255,1)',
+            'white90': 'rgba(255,255,255,.9)',
+            'white60': 'rgba(255,255,255,.6)',
+            'white20': 'rgba(255,255,255,.2)',
+            'activeBlue': 'rgba(93,164,241,1)',
+            'info': 'activeBlue',
+            'okGreen': 'rgba(142,222,132,1)',
+            'succ': '#60C667',
+            'errorRed': 'rgba(255,98,98,1)',
+            'error': 'errorRed',
+            'warnYellow': 'rgba(255,206,83,1)',
+            'warn': 'warnYellow',
+            'kodakRed': 'rgb(237,0,0)',
+            'kodakYellow': 'rgb(255,183,0)',
+            'insiteActive': 'rgba(77,120,169,1)',
+            'insiteApprove': 'rgba(92,189,116,1)',
+            'insiteReject': 'rgba(255,98,98,1)',
+            'primay': 'rgba(64,64,64)',
+            'secondary1': 'rgb(255,206,83)',
+            'secondary2': 'rgb(74,144,226)',
+            'background1': 'rgb(255,255,255)',
+            'background2': 'rgba(0,0,0,0.14)',
+            'selection1': 'rgba(93,164,241,1)',
+            'selection2': 'rgba(93,164,241,.2)',
+            'destructiveRed': '#ff3f3f',
+            'tooltipBack': 'rgba(50,50,50,.9)',
+            'hover': 'rgba(93,164,241,0.35)',
+            'hover20': 'rgba(93,164,241,0.20)'     
+            };
+            var fragment=document.createDocumentFragment();
+            var tr=null;
+            for(var key in colors){
+                tr=document.createElement('tr')
+                tr.innerHTML = '<td>' + key 
+                + '</td><td>$' + key + '</td><td>' 
+                + '<span class="bd-color" style="background-color:' 
+                + colors[key] + '"></span> '
+                + colors[key] + '</td>';
+                fragment.appendChild(tr);
+            }
+            document.querySelector("#color-table").appendChild(fragment);
+        }
+        initColorsTable();
+
+        hljs.initHighlightingOnLoad();
+		document.querySelectorAll("code").forEach(function(ele) {
+			ele.innerHTML = ele.innerHTML.trim().replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+		});
+        var links = document.querySelector("#sidebar").querySelectorAll('a'); 
+        links.forEach(a=>{
+            if(a.getAttribute('href')==location.hash){
+                document.querySelector('.active').classList.remove('active');
+                a.classList.add('active');
+            }
+            a.onclick=function(){
+                document.querySelector('.active').classList.remove('active');
+                a.classList.add('active');
+                return;
+            }
+        });
+        function throttling(fn, wait, maxTimelong) {
+            var timeout = null,
+                startTime = Date.parse(new Date);
+
+            return function() {
+                if(timeout !== null) clearTimeout(timeout);
+                var curTime = Date.parse(new Date);
+                if(curTime-startTime>=maxTimelong) {
+                    fn();
+                    startTime = curTime;
+                } else {
+                    timeout = setTimeout(fn, wait);
+                }
+            }
+        }
+
+        var windowHeight = document.documentElement.clientHeight
+        var winScrollTop=(document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+        var links=document.querySelectorAll('#content h4');
+        var currentNav=null;
+        function handle() {
+            links.forEach((ele)=>{
+                if(ele.offsetTop = winScrollTop + windowHeight){
+                    currentNav=ele;
+                    console.log(ele);
+                    return;
+                }
+            })
+        }
+
+        //window.addEventListener('scroll', throttling(handle, 300, 1000));
+    </script>
+</body>
+</html>

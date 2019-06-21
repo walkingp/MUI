@@ -1,0 +1,18 @@
+{
+  "name": "kodakui",
+  "version": "1.0.0",
+  "description": "A common UI library by Kodak Investment Inc.",
+  "main": "index.js",
+  "dependencies": {
+    "clean-css": "^4.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "lessc ./src/less/styles.less ./src/less/styles.css",
+    "build": "lessc ./src/less/styles.less ./src/css/kodak.ui.css",
+    "buildMinify": "cleancss -o ./src/css/kodak.ui.min.css ./src/less/styles.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "PDC",
+  "license": "ISC"
+}

@@ -1,0 +1,42 @@
+.title{
+    font-size: 16px;
+}
+.body{
+    font-size: 13px;
+}
+.caption{
+    font-size: 11px;
+}
+
+.light-theme{
+    .title,.body,.caption{
+        &.primary{
+            color: @gray75;
+        }
+        &.secondary{
+            color: @gray50;
+        }
+        &.disabled{
+            color: @gray20;
+        }
+        &.accent{
+            color: @secondary2;
+        }
+    }
+}
+.dark-theme{    
+    .title,.body,.caption{
+        &.primary{
+            color: @white;
+        }
+        &.secondary{
+            color: @white60;
+        }
+        &.disabled{
+            color: @white20;
+        }
+        &.accent{
+            color: @warnYellow;
+        }
+    }
+}

@@ -1,0 +1,190 @@
+html,body{
+    height: 100%;
+    font-size: 13px;
+    scroll-behavior: smooth;
+}
+a{
+    color: rgba(0,0,0,.8);
+}
+pre{
+    line-height: 1;
+    padding: 0;
+    background-color: white;
+    margin: 0;
+}
+pre code.hljs{
+    padding: 1em;
+}
+main {
+    display: block;
+    position: relative;
+    width: 100vw;
+    height: 100%;
+    z-index: 0;
+}
+#logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+#sidebar{
+    border-right: 1px solid rgba(0,0,0,.07);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px 0 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transition: transform .25s ease-out;
+    width: 300px;
+    z-index: 3;
+}
+sidebar::-webkit-scrollbar, pre::-webkit-scrollbar {
+    width: 4px;
+    height: 6px;
+}
+
+sidebar::-webkit-scrollbar-thumb, pre::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 4px;
+}
+
+sidebar:hover::-webkit-scrollbar-thumb, pre::-webkit-scrollbar-thumb {
+    background: hsla(0,0%,53%,.4);
+}
+
+sidebar:hover::-webkit-scrollbar-track, pre::-webkit-scrollbar-track {
+    background: hsla(0,0%,53%,.1);
+}
+
+.sidebar ul {
+    margin: 0 0 0 15px;
+}
+.sidebar ul li{
+    margin: 10px 0;
+    cursor:pointer;
+}
+.sidebar ul li a{
+    display: block;
+}
+.sidebar ul li p{
+    font-weight: 800;
+}
+.sidebar ul li li a:active,.sidebar ul li li a.active{
+    color:#42b983;
+    border-right:solid 2px #42b983;
+}
+.sidebar ul li li:hover{
+    text-decoration: underline;
+}
+/*
+sidebar input{
+    display: none;
+}
+.menubar{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    transition:all .2s;
+}
+.menubar:active{
+    transform:scale(1.1);
+}
+.menubar::after,.menubar::before{
+    content:' ';
+    display:block;
+}
+.menubar span,.menubar::after,.menubar::before{
+    height:3px;
+    width:24px;
+    display: block;
+    background-color: #42b983;
+}
+.menubar span,.menubar::after{
+    margin-top:5px; 
+}
+sidebar input{
+    display: none;
+}
+sidebar input:checked+label::before,sidebar input:checked+label::after{
+    display: none;
+}
+sidebar input:checked+label+div{
+    transform:translateX(0);  
+    width: 300px;
+}
+*/
+#content{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 300px;
+    transition: left .25s ease;
+    padding: 20px;
+    line-height: 2;
+    width: 1000px;
+    margin: 0 auto;
+}
+#content article{
+    padding-bottom: 40px;
+}
+#content h4{
+    padding: 20px 0;
+}
+content ul.list{
+    list-style-type: disc;
+    margin-left: 20px;
+}
+content ul.list li{
+    padding-left: 0;
+}
+h1,h2,h3,h4,h5,h6,h7{
+    font-weight: 800;
+    padding: 10px 0;
+}
+h1{
+    font-size: 3rem;
+}
+h2{
+    font-size: 2.5rem;
+}
+h3{
+    font-size: 2rem;
+}
+h4{
+    font-size: 1.5rem;
+}
+h5{
+    font-size: 1.25rem;
+}
+h6{
+    font-size: 1rem;
+}
+h7{
+    font-size: 0.75rem;
+}
+.bd-color{
+    border-radius: 2px;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.1), inset 0 0 0 1px rgba(0,0,0,.1);
+    display: inline-block;
+    height: 24px;
+    margin-right: 8px;
+    width: 24px;
+    float: left;
+    margin-top: 2px;
+}
+table th,table td{
+    vertical-align: middle;
+    text-align: center; 
+}
+.columns.demo .column{
+    background-color: #00d1b2;
+    padding: 1.25rem 0;
+    color: white;
+    text-align: center;
+    box-shadow: 0 0 0 1px #eee;
+}

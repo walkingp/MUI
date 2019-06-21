@@ -1,0 +1,79 @@
+.alert{
+    background: @dialogBack;
+    box-shadow: 0 2px 10px 0 @gray30;
+    width: 600px;
+    height: 220px;
+    position: relative;
+    header{
+        background-color: @gray75;
+        height: 42px;
+        line-height: 42px;
+        padding: 0 62px;
+        color: @white;
+        text-transform: uppercase;
+        position: relative;
+        &::before{
+            width: 42px;
+            height: 100%;
+            background-color:@gray70;
+            color: @white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 24px;
+            font-weight: 800;
+            text-transform: lowercase;
+        }
+        &.info{
+            &::before{
+                background-color: @activeBlue;
+                content: "i";
+            }
+        }
+        &.warn{
+            &::before{
+                background-color: @warnYellow;
+                content: "!";
+            }
+        }
+        &.error{
+            &::before{
+                background-color: @errorRed;
+                content: "!";
+            }
+        }
+    }
+    main{
+        padding: 32px;
+        width: 100%;
+        height: 110px;
+        .title{
+            color: @gray70;
+            font-size: 16px;
+            font-weight: 800;
+        }
+        .content{
+            line-height: 20px;
+            color: @gray75;
+        }
+    }
+    footer{
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 20px;
+        box-shadow: inset 0 1px 0 0 @gray10;
+        button{
+            &+button{
+                margin-left: 10px;
+            }
+        }
+    }
+}
