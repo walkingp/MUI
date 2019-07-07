@@ -2,13 +2,13 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, max-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MUI</title>
     <link id="favicon" rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" type="text/css" href="./src/less/styles.css" />
     <link rel="stylesheet" type="text/css" href="./src/stylesheets/doc.css" />
-    <link rel="stylesheet" type="text/css" href="./src/libs/highlight/monokai_sublime.min.css" />    
+    <link rel="stylesheet" type="text/css" href="./src/libs/prism/prism.css" />  
 </head>
 <body>
     <header></header>
@@ -19,7 +19,7 @@
         <label for="chk" class="menubar"><span></span></label>
         <div class="sidebar">
             <div id="logo">
-                <h1><img src="./logo.png" alt="mui"></h1>
+                <h1><img src="./logo.png" alt="MUI"></h1>
                 <p><strong>MUI</strong> Another UI Library</p>
             </div>
             <ul>
@@ -68,6 +68,7 @@
                     <li><a href="#nav_progressbar">进度条Progressbar</a></li>
                     <li><a href="#nav_mask">遮罩层mask</a></li>
                     <li><a href="#nav_arrow">箭头arrow</a></li>
+                    <li><a href="#nav_filter">过滤器filter</a></li>
                 </ul>
             </li>
             <li>
@@ -85,9 +86,9 @@
         <article>
             <h3 id="nav_start">起步</h3>
             <h4 id="nav_about">关于MUI</h4>
-            <p>一套前端UI通用CSS框架</p>
+            <p>又一个CSS框架</p>
             <ul class="list">
-                <li>简洁迷你，大小仅22KB；</li>
+                <li>简洁迷你，大小仅27KB；</li>
                 <li>语义化，使用HTML5及CSS3技术，符合Web标准；</li>
                 <li>完全基于HTML+CSS，无任何JavaScript代码</li>
                 <li>使用Less预处理器，可定义主题颜色；</li>
@@ -105,7 +106,7 @@
                 </li>
             </ul>
             <p>第二步：将mui.css文件复制到你的文件夹，然后在页面中head标签内添加。</p>
-            <pre class="hljs">&lt;link rel="stylesheet" href="css/mui.css" /&gt;</pre>
+            <pre style="margin-top: 10px;"><code class="language-html"><link rel="stylesheet" href="css/mui.css" /></code></pre>
             <h4 id="nav_custom">自定义</h4>
             <h5>下载并修改源码</h5>
             <p>
@@ -113,8 +114,7 @@
             </p>
             <p>文件结构：</p>
             <pre class="list">
-                <code>
-├─styles.less       总入口
+                <code class="language-html">├─styles.less       总入口
 │
 ├─minireset.less    重置类
 ├─normalized.less   初始化默认值
@@ -139,7 +139,8 @@
 ├─tab.less          选项卡
 ├─table.less        表格类
 ├─toast.less        Toast消息
-├─tooltip.less      鼠标悬停   
+├─tooltip.less      鼠标悬停 
+├─filter.less       过滤器    
                 </code>
             </pre>
             <p>使用less自定义变量，将所有变量更改为自定义值。下载源码所有.less文件</p>
@@ -160,7 +161,7 @@
             <h5>使用方式</h5>
             <p>变量形式请使用less方式引用</p>
             <pre>
-                <code class="css">
+                <code class="language-css">
 #id{color: $gray20;}
                 </code>
             </pre>
@@ -171,7 +172,7 @@
                 <p class="error">错误内容</p>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <p class="info">信息类</p>
 <p class="warn">警告类</p>
 <p class="error">错误内容</p>
@@ -179,7 +180,7 @@
             </pre>
             <h4 id="nav_helper">基础类</h4>
             <pre>
-                <code class="css">
+                <code class="language-css">
 hr {
     border: none;
     border-bottom: 1px solid @gray20;
@@ -236,7 +237,7 @@ hr {
                 <span class="iconfont icon-ok_nc"></span>
             </p>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <span class="iconfont icon-unknown_c"></span>
 <span class="iconfont icon-ok_c"></span>
 <span class="iconfont icon-ok_nc"></span>
@@ -249,7 +250,7 @@ hr {
                 <span class="iconfont medium icon-ok_nc"></span>
             </p>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <span class="iconfont medium icon-unknown_c"></span>
 <span class="iconfont medium icon-ok_c"></span>
 <span class="iconfont medium icon-ok_nc"></span>
@@ -262,7 +263,7 @@ hr {
                 <span class="iconfont large icon-ok_nc"></span>
             </p>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <span class="iconfont large icon-unknown_c"></span>
 <span class="iconfont large icon-ok_c"></span>
 <span class="iconfont large icon-ok_nc"></span>
@@ -275,7 +276,7 @@ hr {
                 <span class="iconfont icon-ok_nc succ"></span>
             </p>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <span class="iconfont icon-unknown_c warn"></span>
 <span class="iconfont icon-ok_c info"></span>
 <span class="iconfont icon-ok_nc succ"></span>
@@ -288,7 +289,7 @@ hr {
                 <span class="iconfont icon-history large spin"></span>
             </p>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <span class="iconfont icon-color_target large spin"></span>
 <span class="iconfont icon-clock large spin"></span>
 <span class="iconfont icon-history large spin"></span>
@@ -308,7 +309,7 @@ hr {
                 <div class="column">column 4</div>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <div class="columns">
     <div class="column">column 1</div>
     <div class="column">column 2</div>
@@ -324,7 +325,7 @@ hr {
                 <div class="column is-6">is-6</div>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <div class="columns">
     <div class="column is-6">is-6</div>
     <div class="column is-6">is-6</div>
@@ -336,7 +337,7 @@ hr {
                 <div class="column is-10">is-10</div>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <div class="columns">
     <div class="column is-2">is-2</div>
     <div class="column is-10">is-10</div>
@@ -348,7 +349,7 @@ hr {
                 <div class="column is-1">is-1</div>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <div class="columns">
     <div class="column is-11">is-11</div>
     <div class="column is-1">is-1</div>
@@ -366,7 +367,7 @@ hr {
                 </div>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <div class="columns">
     <div class="column is-6">is-6</div>
     <div class="column is-6">is-6</div>
@@ -379,7 +380,7 @@ hr {
                 <input type="text" value="" placeholder="请输入文本" />
             </p>
             <pre>
-                <code class="html">
+                <code class="language-html">
                     <input type="text" value="" placeholder="请输入文本" />                  
                 </code>
             </pre>
@@ -390,7 +391,7 @@ hr {
                 <span class="iconfont icon-cancel_nc"></span>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <div class="searchbox">
     <span class="iconfont icon-search"></span>
     <input type="text" placeholder="请输入搜索内容" required pattern="\S+.*">
@@ -408,7 +409,7 @@ hr {
                 </select>
             </p>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <select>
     <option>请选择值</option>
     <option>男</option>
@@ -446,7 +447,7 @@ hr {
                 <button class="default">默认按钮</button>
             </p>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <button>普通按钮</button>
 <button class="active">按下状态</button>
 <button class="destructive">删除操作</button>
@@ -472,7 +473,7 @@ hr {
                 <label for="checkbox-disabled">不可用复选框</label>
             </p>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <input type="checkbox" id="checkbox" value="1">
 <label for="checkbox">复选框</label>
 <input type="checkbox" checked="checked" id="checked" value="1">
@@ -494,7 +495,7 @@ hr {
                 <input type="radio" disabled="disabled" id="radio-disabled"><label for="radio-disabled">禁用状态</label>
             </p>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <input type="radio" id="radio"><label for="radio">普通状态</label>
 <input type="radio" checked="checked" id="radio-checked"><label for="radio-checked">普通状态</label>
 <input type="radio" disabled="disabled" id="radio-disabled"><label for="radio-disabled">禁用状态</label>
@@ -510,7 +511,7 @@ hr {
                 <label for="toggle_checked"></label>
             </p>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <input type="checkbox" id="toggle" class="switcher" />
 <label for="toggle"></label>
 <input type="checkbox" checked="checked" id="toggle_checked" class="switcher" />
@@ -527,7 +528,7 @@ hr {
                 <span>Counter</span>
             </p>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <label class="counter">9</label>
 <span>Counter</span>
 <label class="counter error">9</label>
@@ -542,7 +543,7 @@ hr {
                 <div class="tooltip arrowed error">错误信息类：<br />详细内容</div>
             </p>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <div class="tooltip">普通tooltip</div>
 <div class="tooltip arrowed info">普通信息类：<br />详细内容</div>
 <div class="tooltip arrowed warn">警告信息类：<br />详细内容</div>
@@ -553,6 +554,7 @@ hr {
             <h5>不带图标菜单</h5>
             <div class="dropdown">
                 <ul>
+                    <li class="selected">Default selected</li>
                     <li>New File</li>
                     <li>Edit File</li>
                     <li class="seperator"></li>
@@ -569,7 +571,7 @@ hr {
                 </ul>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <div class="dropdown">
     <ul>
         <li>New File</li>
@@ -612,7 +614,7 @@ hr {
                 </ul>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <div class="dropdown">
     <ul>
         <li>
@@ -651,7 +653,7 @@ hr {
                 </footer>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <div class="dialog">
     <header>
         dialog title
@@ -692,7 +694,7 @@ hr {
                 </footer>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <div class="dialog">
     <header>
         dialog title
@@ -733,7 +735,7 @@ hr {
                 </footer>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <div class="alert">
     <header class="info">info alert title</header>
     <main>
@@ -758,7 +760,7 @@ hr {
                 </footer>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <div class="alert">
     <header class="warn">warning alert title</header>
     <main>
@@ -783,7 +785,7 @@ hr {
                 </footer>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <div class="alert">
     <header class="error">Error alert title</header>
     <main>
@@ -803,7 +805,7 @@ hr {
                 <span class="iconfont icon-cancel"></span>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <div class="toast succ">
     Successful Action Completed Alert
     <span class="iconfont icon-cancel"></span>
@@ -816,7 +818,7 @@ hr {
                 <span class="iconfont icon-cancel"></span>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <div class="toast error">
     Failure or Warning Alert
     <span class="iconfont icon-cancel"></span>
@@ -829,7 +831,7 @@ hr {
                 <span class="iconfont icon-cancel"></span>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <div class="toast warn">
     Attention Alert
     <span class="iconfont icon-cancel"></span>
@@ -842,7 +844,7 @@ hr {
                 <span class="iconfont icon-cancel"></span>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <div class="toast info">
     General Infomation Alert
     <span class="iconfont icon-cancel"></span>
@@ -866,7 +868,7 @@ hr {
                 </div>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <ul class="tab">
     <li class="active">
         <input type="radio" name="radio_tab" id="t1" checked="checked">
@@ -916,7 +918,7 @@ hr {
                 </div>                
             </div>       
             <pre>
-                <code class="html">
+                <code class="language-html">
 <div class="tabs">
     <div class="tab">
         <input type="radio" id="tab-1" name="tab-group-1" checked="checked">
@@ -969,7 +971,7 @@ hr {
                 </footer>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <div class="dialog tab">
     <header>
         Dialog title 
@@ -1057,7 +1059,7 @@ hr {
                 </tr>
             </table>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <table>
     <tr>
         <th class="sorted">姓名</th>
@@ -1093,7 +1095,7 @@ hr {
                 <div></div>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <div class="spinner">
     <div></div>
     <div></div>
@@ -1117,7 +1119,7 @@ hr {
                 </div>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <div class="progressbar">
     <div class="header">creating job</div>
     <div class="body">
@@ -1137,7 +1139,7 @@ hr {
                 </div>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <div class="mask">
     <div><label for="check_mask">关闭</label></div>
 </div>
@@ -1152,7 +1154,7 @@ hr {
                 <span class="arrow-right"></span>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <span class="arrow-up"></span>
 <span class="arrow-down"></span>
 <span class="arrow-left"></span>
@@ -1167,13 +1169,121 @@ hr {
                 <span class="hollow-arrow-right"></span>
             </div>
             <pre>
-                <code class="html">
+                <code class="language-html">
 <span class="hollow-arrow-up"></span>
 <span class="hollow-arrow-down"></span>
 <span class="hollow-arrow-left"></span>
 <span class="hollow-arrow-right"></span>
                 </code>
             </pre>
+            <h4>过滤器filter</h4>
+            <dl class="filter">
+                <dt>Filter 1:</dt>
+                <dd>
+                    <input type="checkbox" id="filter1" name="filter">
+                    <label for="filter1">All</label>
+                    <div class="dropdown">
+                        <ul>
+                            <li class="selected">Default selected</li>
+                            <li>New File</li>
+                            <li>Edit File</li>
+                            <li class="seperator"></li>
+                            <li>Edit
+                                <ul>
+                                    <li>Copy</li>
+                                    <li>Cut</li>
+                                    <li>Paste</li>
+                                </ul>
+                            </li>
+                            <li>About</li>
+                        </ul>
+                    </div>
+                </dd>
+                <dt>Filter 2:</dt>
+                <dd>
+                    <input type="checkbox" id="filter2" name="filter">
+                    <label for="filter2">All</label>
+                    <div class="dropdown">
+                        <ul>
+                            <li class="selected">Default selected</li>
+                            <li>New File</li>
+                            <li>Edit File</li>
+                            <li class="seperator"></li>
+                            <li>About</li>
+                        </ul>
+                    </div>
+                </dd>
+                <dt>Filter 3:</dt>
+                <dd>
+                    <input type="checkbox" id="filter3" name="filter">
+                    <label for="filter3">All</label>
+                    <div class="dropdown">
+                        <ul>
+                            <li class="selected">Default selected</li>
+                            <li>New File</li>
+                            <li>Edit File</li>
+                            <li class="seperator"></li>
+                            <li>About</li>
+                        </ul>
+                    </div>
+                </dd>
+            </dl>
+            <pre>
+                <code class="language-css">
+<dl class="filter">
+    <dt>Filter 1:</dt>
+    <dd>
+        <input type="checkbox" id="filter1" name="filter">
+        <label for="filter1">All</label>
+        <div class="dropdown">
+            <ul>
+                <li class="selected">Default selected</li>
+                <li>New File</li>
+                <li>Edit File</li>
+                <li class="seperator"></li>
+                <li>Edit
+                    <ul>
+                        <li>Copy</li>
+                        <li>Cut</li>
+                        <li>Paste</li>
+                    </ul>
+                </li>
+                <li>About</li>
+            </ul>
+        </div>
+    </dd>
+    <dt>Filter 2:</dt>
+    <dd>
+        <input type="checkbox" id="filter2" name="filter">
+        <label for="filter2">All</label>
+        <div class="dropdown">
+            <ul>
+                <li class="selected">Default selected</li>
+                <li>New File</li>
+                <li>Edit File</li>
+                <li class="seperator"></li>
+                <li>About</li>
+            </ul>
+        </div>
+    </dd>
+    <dt>Filter 3:</dt>
+    <dd>
+        <input type="checkbox" id="filter3" name="filter">
+        <label for="filter3">All</label>
+        <div class="dropdown">
+            <ul>
+                <li class="selected">Default selected</li>
+                <li>New File</li>
+                <li>Edit File</li>
+                <li class="seperator"></li>
+                <li>About</li>
+            </ul>
+        </div>
+    </dd>
+</dl>                    
+                </code>
+            </pre>
+            <h3>关于</h3>
             <h4 id="nav_versions">版本更新记录</h4>
             <ul class="list">
                 <li><time>2019-6-20</time> V1.0.0发布</li>
@@ -1181,7 +1291,7 @@ hr {
         </article>
         </content>
     </main>
-    <script src="./src/libs/highlight/highlight.pack.js"></script>
+    <script src="./src/libs/prism/prism.js"></script>
     <script type="text/javascript">
         function initColorsTable(){
             var colors={
@@ -1239,7 +1349,6 @@ hr {
         }
         initColorsTable();
 
-        hljs.initHighlightingOnLoad();
 		document.querySelectorAll("code").forEach(function(ele) {
 			ele.innerHTML = ele.innerHTML.trim().replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
 		});

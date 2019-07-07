@@ -100,7 +100,7 @@ input+sidebar>label+div{
     transition: all .5s;    
     position: absolute;
     top: 0;
-    padding-top: 50px;
+    padding: 50px 0;
     bottom: 0;
     border-right: 1px solid rgba(0,0,0,.07);
     overflow-y: auto;
@@ -217,7 +217,7 @@ table th,table td{
     background-color: #f1f1f1;
     padding: 1.25rem 0;
     text-align: center;
-    box-shadow: 0 0 0 1px #ddd;
+    box-shadow: 0 0 0 1px #ddd inset;
 }
 #check_mask+label+.mask{
     visibility: hidden;
@@ -242,14 +242,17 @@ table th,table td{
     margin-left: 10px;
 }
 @media screen and (max-width: 768px){
+    #sidebar{
+        width: 100%;
+    }
     input+sidebar>label+div{
         transform: translateX(0);
     }
     input:checked+sidebar>label+div{
-        transform: translateX(-300px);
+        transform: translateX(-100%);
     }
     input+sidebar+content#content{
-        left: 300px;
+        left: 100%;
     }
     input:checked+sidebar+content#content{
         left: 0;
