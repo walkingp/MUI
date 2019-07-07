@@ -1,5 +1,5 @@
 /*! minireset.css v0.0.5 | MIT License | github.com/jgthms/minireset.css */
-@import 'http://at.alicdn.com/t/font_291284_0do7qgzlrq8.css';
+@import '../iconfont/iconfont.css';
 html,
 body,
 p,
@@ -200,7 +200,7 @@ table th {
   color: #60C667;
 }
 .link {
-  color: #5da4f1;
+  color: #4990E2;
 }
 hr {
   border: none;
@@ -854,12 +854,16 @@ input.switcher[type='checkbox']:checked + label::before {
 .hollow-arrow-right {
   transform: rotate(135deg);
 }
+.dropdown {
+  z-index: 2;
+}
 .dropdown ul {
   background-color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
   min-width: 180px;
   width: 180px;
+  padding: 6px 0;
 }
 .dropdown ul li {
   height: 30px;
@@ -869,6 +873,7 @@ input.switcher[type='checkbox']:checked + label::before {
 }
 .dropdown ul li .iconfont {
   margin-right: 5px;
+  vertical-align: middle;
 }
 .dropdown ul li:hover {
   background: rgba(93, 164, 241, 0.2);
@@ -876,12 +881,26 @@ input.switcher[type='checkbox']:checked + label::before {
 .dropdown ul li:hover > ul {
   visibility: visible;
 }
-.dropdown ul li:active {
+.dropdown ul li:active,
+.dropdown ul li.selected {
   background-color: #5da4f1;
+  color: #ffffff;
+}
+.dropdown ul li:active li,
+.dropdown ul li.selected li {
+  color: rgba(0, 0, 0, 0.75);
+}
+.dropdown ul li:active li:active,
+.dropdown ul li.selected li:active,
+.dropdown ul li:active li.selected,
+.dropdown ul li.selected li.selected {
+  background-color: #5da4f1;
+  color: #ffffff;
 }
 .dropdown ul li.seperator {
   height: 1px;
   background: rgba(0, 0, 0, 0.1);
+  margin: 6px 0;
 }
 .dropdown ul li.disabled {
   cursor: not-allowed;
@@ -962,7 +981,7 @@ input.switcher[type='checkbox']:checked + label::before {
   flex: none;
   width: 91.66667%;
 }
-.column.is-11 {
+.column.is-12 {
   flex: none;
   width: 100%;
 }
@@ -1379,6 +1398,54 @@ table tr:hover td {
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 999;
+}
+.filter {
+  position: relative;
+}
+.filter dt {
+  display: inline-block;
+}
+.filter dt:not(:first-child) {
+  margin-left: 20px;
+}
+.filter dd {
+  position: relative;
+  display: inline-block;
+}
+.filter dd input[type=checkbox] + label {
+  color: #4990E2;
+  padding: 0 15px 0 5px;
+}
+.filter dd input[type=checkbox] + label::before {
+  display: none;
+}
+.filter dd input[type=checkbox] + label::after {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.5);
+  transform: rotate(180deg);
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 8px;
+  right: 0;
+  left: auto;
+  border-bottom-color: #4990E2;
+  transition: all 0.5s;
+}
+.filter dd input[type=checkbox] + label + .dropdown {
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  top: 24px;
+}
+.filter dd input[type=checkbox]:checked + label::after {
+  transform: rotate(0);
+}
+.filter dd input[type=checkbox]:checked + label + .dropdown {
+  visibility: visible;
 }
 .iconfont.small {
   font-size: 16px;

@@ -1,0 +1,49 @@
+.filter{
+    position: relative;
+    dt{
+        display: inline-block;
+        &:not(:first-child){
+            margin-left: 20px;
+        }
+    }
+    dd{
+        position: relative;
+        display: inline-block;
+        input[type=checkbox]{        
+            &+ label{
+                color: @link;
+                padding: 0 15px 0 5px;
+                &::before{
+                    display: none;
+                }
+                &::after{
+                    .arrow-down();
+                    content: "";
+                    display: inline-block;
+                    position: absolute;
+                    top: 8px;
+                    right: 0;
+                    left: auto;
+                    border-bottom-color: @link;
+                    transition: all .5s;
+                }
+                &+.dropdown{
+                    visibility: hidden;
+                    position: absolute;
+                    left: 0;
+                    top: 24px;
+                }
+            }
+            &:checked{
+                &+label{
+                    &::after{
+                        transform: rotate(0);
+                    }
+                    &+.dropdown{
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+}
